@@ -76,7 +76,7 @@
             // 
             // progressBarTimer
             // 
-            this.progressBarTimer.Interval = 50;
+            this.progressBarTimer.Interval = 30;
             this.progressBarTimer.Tick += new System.EventHandler(this.progressBarTimer_Tick);
             // 
             // LoadingScreen

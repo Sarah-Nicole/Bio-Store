@@ -32,8 +32,13 @@ namespace Bio_Store
 
             if (loadingBarValue >= progressBar.Maximum)
             {
-                progressBarTimer.Stop(); 
+                progressBarTimer.Stop();
+                this.Hide(); 
+
+                MainMenuScreen mainMenuScreen = new MainMenuScreen();
+                mainMenuScreen.Show();
             }
+
 
         }
     }
