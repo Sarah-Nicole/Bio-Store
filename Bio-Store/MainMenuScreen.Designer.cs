@@ -28,9 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnProducts = new System.Windows.Forms.Button();
             this.btnInvoice = new System.Windows.Forms.Button();
+            this.btnProducts = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // btnInvoice
+            // 
+            this.btnInvoice.BackgroundImage = global::Bio_Store.Properties.Resources.BtnImgBill;
+            this.btnInvoice.FlatAppearance.BorderColor = System.Drawing.Color.PaleTurquoise;
+            this.btnInvoice.FlatAppearance.BorderSize = 2;
+            this.btnInvoice.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnInvoice.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnInvoice.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInvoice.ForeColor = System.Drawing.Color.White;
+            this.btnInvoice.Location = new System.Drawing.Point(386, 37);
+            this.btnInvoice.Name = "btnInvoice";
+            this.btnInvoice.Size = new System.Drawing.Size(323, 173);
+            this.btnInvoice.TabIndex = 1;
+            this.btnInvoice.Text = "Rechnung Erstellen";
+            this.btnInvoice.UseVisualStyleBackColor = true;
             // 
             // btnProducts
             // 
@@ -43,18 +59,7 @@
             this.btnProducts.TabIndex = 0;
             this.btnProducts.Text = "Produkte Verwalten";
             this.btnProducts.UseVisualStyleBackColor = true;
-            // 
-            // btnInvoice
-            // 
-            this.btnInvoice.BackgroundImage = global::Bio_Store.Properties.Resources.BtnImgBill;
-            this.btnInvoice.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInvoice.ForeColor = System.Drawing.Color.White;
-            this.btnInvoice.Location = new System.Drawing.Point(386, 37);
-            this.btnInvoice.Name = "btnInvoice";
-            this.btnInvoice.Size = new System.Drawing.Size(323, 173);
-            this.btnInvoice.TabIndex = 1;
-            this.btnInvoice.Text = "Rechnung Erstellen";
-            this.btnInvoice.UseVisualStyleBackColor = true;
+            this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
             // 
             // MainMenuScreen
             // 
@@ -64,6 +69,7 @@
             this.ClientSize = new System.Drawing.Size(735, 245);
             this.Controls.Add(this.btnInvoice);
             this.Controls.Add(this.btnProducts);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainMenuScreen";
             this.Text = "Main Menu";
             this.ResumeLayout(false);

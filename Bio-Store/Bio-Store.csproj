@@ -58,6 +58,12 @@
     <Compile Include="LoadingScreen.Designer.cs">
       <DependentUpon>LoadingScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductScreen.Designer.cs">
+      <DependentUpon>ProductScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainMenuScreen.resx">
@@ -65,6 +71,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoadingScreen.resx">
       <DependentUpon>LoadingScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductScreen.resx">
+      <DependentUpon>ProductScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
