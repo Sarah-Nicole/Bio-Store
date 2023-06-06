@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblName = new System.Windows.Forms.Label();
             this.textBoxProductName = new System.Windows.Forms.TextBox();
             this.textBoxProductBrand = new System.Windows.Forms.TextBox();
@@ -40,8 +42,8 @@
             this.btnProductEdit = new System.Windows.Forms.Button();
             this.btnProductEmpty = new System.Windows.Forms.Button();
             this.btnProductDelete = new System.Windows.Forms.Button();
-            this.dataGridProductOverview = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridProductOverview)).BeginInit();
+            this.dataGridProduct = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // lblName
@@ -146,6 +148,8 @@
             // 
             this.comboBoxProductCategory.BackColor = System.Drawing.Color.DarkSlateGray;
             this.comboBoxProductCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxProductCategory.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxProductCategory.ForeColor = System.Drawing.Color.White;
             this.comboBoxProductCategory.FormattingEnabled = true;
             this.comboBoxProductCategory.Items.AddRange(new object[] {
             "Obst",
@@ -155,7 +159,7 @@
             "Drogerie"});
             this.comboBoxProductCategory.Location = new System.Drawing.Point(126, 85);
             this.comboBoxProductCategory.Name = "comboBoxProductCategory";
-            this.comboBoxProductCategory.Size = new System.Drawing.Size(300, 28);
+            this.comboBoxProductCategory.Size = new System.Drawing.Size(300, 29);
             this.comboBoxProductCategory.TabIndex = 9;
             // 
             // btnProductEdit
@@ -200,16 +204,43 @@
             this.btnProductDelete.UseVisualStyleBackColor = false;
             this.btnProductDelete.Click += new System.EventHandler(this.btnProductDelete_Click);
             // 
-            // dataGridProductOverview
+            // dataGridProduct
             // 
-            this.dataGridProductOverview.BackgroundColor = System.Drawing.Color.DarkSlateGray;
-            this.dataGridProductOverview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridProductOverview.Location = new System.Drawing.Point(27, 219);
-            this.dataGridProductOverview.Name = "dataGridProductOverview";
-            this.dataGridProductOverview.RowHeadersWidth = 62;
-            this.dataGridProductOverview.RowTemplate.Height = 28;
-            this.dataGridProductOverview.Size = new System.Drawing.Size(924, 498);
-            this.dataGridProductOverview.TabIndex = 13;
+            this.dataGridProduct.AllowUserToAddRows = false;
+            this.dataGridProduct.AllowUserToDeleteRows = false;
+            this.dataGridProduct.AllowUserToResizeColumns = false;
+            this.dataGridProduct.AllowUserToResizeRows = false;
+            this.dataGridProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridProduct.BackgroundColor = System.Drawing.Color.DarkSlateGray;
+            this.dataGridProduct.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(96)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridProduct.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridProduct.Location = new System.Drawing.Point(27, 219);
+            this.dataGridProduct.MultiSelect = false;
+            this.dataGridProduct.Name = "dataGridProduct";
+            this.dataGridProduct.ReadOnly = true;
+            this.dataGridProduct.RowHeadersVisible = false;
+            this.dataGridProduct.RowHeadersWidth = 62;
+            this.dataGridProduct.RowTemplate.Height = 28;
+            this.dataGridProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridProduct.Size = new System.Drawing.Size(924, 498);
+            this.dataGridProduct.TabIndex = 13;
+            this.dataGridProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridProduct_CellContentClick);
             // 
             // ProductScreen
             // 
@@ -217,7 +248,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Bio_Store.Properties.Resources.ImgBgProducts;
             this.ClientSize = new System.Drawing.Size(978, 744);
-            this.Controls.Add(this.dataGridProductOverview);
+            this.Controls.Add(this.dataGridProduct);
             this.Controls.Add(this.btnProductDelete);
             this.Controls.Add(this.btnProductEmpty);
             this.Controls.Add(this.btnProductEdit);
@@ -236,7 +267,7 @@
             this.Name = "ProductScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Products";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridProductOverview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridProduct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,6 +287,6 @@
         private System.Windows.Forms.Button btnProductEdit;
         private System.Windows.Forms.Button btnProductEmpty;
         private System.Windows.Forms.Button btnProductDelete;
-        private System.Windows.Forms.DataGridView dataGridProductOverview;
+        private System.Windows.Forms.DataGridView dataGridProduct;
     }
 }
