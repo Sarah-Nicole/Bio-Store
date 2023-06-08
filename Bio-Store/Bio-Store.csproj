@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InvoiceScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvoiceScreen.Designer.cs">
+      <DependentUpon>InvoiceScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainMenuScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="InvoiceScreen.resx">
+      <DependentUpon>InvoiceScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainMenuScreen.resx">
       <DependentUpon>MainMenuScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +125,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\Resources\ImgBgProducts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\ImgBgInvoice.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

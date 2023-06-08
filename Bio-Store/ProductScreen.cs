@@ -98,14 +98,18 @@ namespace Bio_Store
 
         }
 
-        private void dataGridProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridProduct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            textBoxProductName.Text = dataGridProduct.SelectedRows[0].Cells[1].Value.ToString();
-            textBoxProductBrand.Text = dataGridProduct.SelectedRows[0].Cells[2].Value.ToString();
-            comboBoxProductCategory.Text = dataGridProduct.SelectedRows[0].Cells[3].Value.ToString();
-            textBoxProductPrice.Text = dataGridProduct.SelectedRows[0].Cells[4].Value.ToString();
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridProduct.Rows[e.RowIndex];
+                textBoxProductName.Text = selectedRow.Cells[0].Value.ToString();
+                textBoxProductBrand.Text = selectedRow.Cells[1].Value.ToString();
+                comboBoxProductCategory.Text = selectedRow.Cells[2].Value.ToString();
+                textBoxProductPrice.Text = selectedRow.Cells[3].Value.ToString();
 
-            lastSelectedProductID = (int)dataGridProduct.SelectedRows[0].Cells[0].Value;
+                lastSelectedProductID = Convert.ToInt32(selectedRow.Cells[0].Value);
+            }
 
         }
 
@@ -116,7 +120,7 @@ namespace Bio_Store
             // SQL Verknüpfung zu ProductScreen machen, damit Table angezeigt wird
             databaseConnection.Open();
 
-            string query = "select * from Products";
+            string query = "SELECT * FROM Products";
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, databaseConnection);
 
             DataSet dataSet = new DataSet();

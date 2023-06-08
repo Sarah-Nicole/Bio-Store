@@ -93,6 +93,16 @@ namespace Bio_Store.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ImgBgInvoice {
+            get {
+                object obj = ResourceManager.GetObject("ImgBgInvoice", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ImgBgProducts {
             get {
                 object obj = ResourceManager.GetObject("ImgBgProducts", resourceCulture);

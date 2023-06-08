@@ -240,7 +240,7 @@
             this.dataGridProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridProduct.Size = new System.Drawing.Size(924, 498);
             this.dataGridProduct.TabIndex = 13;
-            this.dataGridProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridProduct_CellContentClick);
+            this.dataGridProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridProduct_CellClick);
             // 
             // ProductScreen
             // 
