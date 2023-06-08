@@ -17,7 +17,12 @@ namespace Bio_Store
 
     {
         private SqlConnection databaseConnection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=C:\Users\manue\Documents\Bio-Store.mdf;Integrated Security = True; Connect Timeout = 30");
-        private int lastSelectedInvoiceID; 
+        private int lastSelectedInvoiceID;
+        string invoiceID; 
+        string invoiceRecipient; 
+        string invoiceCatergory; 
+        string invoicePrice; 
+
 
         public InvoiceScreen()
         {
@@ -27,19 +32,7 @@ namespace Bio_Store
 
         private void btnInvoiceSave_Click(object sender, EventArgs e)
         {
-            string invoiceID = textBoxInvoiceID.Text;
-            string invoiceRecipient = textBoxInvoiceRecipient.Text;
-            string invoiceCatergory = comboBoxInvoiceCategory.Text;
-            string invoicePrice = textBoxInvoiceTotalPrice.Text; 
-
-            if (invoiceID == "" ||
-                invoiceRecipient == "" ||
-                invoiceCatergory == "" ||
-                invoicePrice == "")
-            {
-                MessageBox.Show("Bitte alle Felder ausfüllen");
-                return; 
-            }
+            CheckTextBoxes();
 
 
             // Check if invoiceID already exists
@@ -66,19 +59,7 @@ namespace Bio_Store
 
         private void btnInvoiceEdit_Click(object sender, EventArgs e)
         {
-            string invoiceID = textBoxInvoiceID.Text;          
-            string invoiceRecipient = textBoxInvoiceRecipient.Text;
-            string invoiceCatergory = comboBoxInvoiceCategory.Text;
-            string invoicePrice = textBoxInvoiceTotalPrice.Text;
-
-            if (invoiceID == "" ||
-                invoiceRecipient == "" ||
-                invoiceCatergory == "" ||
-                invoicePrice == "")
-            {
-                MessageBox.Show("Bitte alle Felder ausfüllen");
-                return;
-            }
+            CheckTextBoxes(); 
 
 
             if (invoiceID == lastSelectedInvoiceID.ToString())
@@ -135,7 +116,24 @@ namespace Bio_Store
         }
 
         // ------------ METHODS ------------
+         
+        private void CheckTextBoxes()
+        {
+            invoiceID = textBoxInvoiceID.Text;
+            invoiceRecipient = textBoxInvoiceRecipient.Text;
+            invoiceCatergory = comboBoxInvoiceCategory.Text;
+            invoicePrice = textBoxInvoiceTotalPrice.Text;
 
+            if (invoiceID == "" ||
+                invoiceRecipient == "" ||
+                invoiceCatergory == "" ||
+                invoicePrice == "")
+            {
+                MessageBox.Show("Bitte alle Felder ausfüllen");
+                return;
+            }
+
+        }
 
         private void ShowProducts()
         {
